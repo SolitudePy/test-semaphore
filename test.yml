@@ -2,5 +2,9 @@
   hosts: 192.168.1.26
   tasks:
     - name: Print the hostname
+      ansible.builtin.command:
+        cmd: hostname
+      register: hostname_result
+    - name: Display the hostname
       ansible.builtin.debug:
-        msg: "The hostname is {{ inventory_hostname }}"
+        msg: "The hostname is {{ hostname_result.stdout }}"
