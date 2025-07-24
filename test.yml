@@ -1,5 +1,5 @@
 - name: Test Playbook
-  hosts: pi
+  hosts: pi.homelab
   tasks:
     - name: Print the hostname
       ansible.builtin.command: hostname
